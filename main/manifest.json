@@ -1,8 +1,8 @@
 ﻿{
 	"name": "Show whitespace characters in Textarea",
-	"version": "0.0.2",
+	"version": "0.1.0",
 	"manifest_version": 2,
-	"description": "Show whitespace characters in Textarea",
+	"description": "Show whitespace characters in Textarea. please Ctrl + Click in Textarea.",
 	"icons": {
 		"16": "icons/icon16.png",
 		"48": "icons/icon48.png",
