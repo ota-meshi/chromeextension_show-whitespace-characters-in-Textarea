@@ -239,10 +239,6 @@
 		selection.removeAllRanges();
 		selection.addRange(newRange);
 	}
-	var seq = 0;
-	var newSeq = function() {
-		return seq++;
-	};
 
 	var VisibleSpacesEditor = function(edit) {
 		var fireEvnet;

@@ -21,6 +21,12 @@
 						dest.dispatchEvent(newE);
 					} else {
 						const newE = new e.constructor(e.type, e);
+
+						if (e.type === 'keydown' && e.keyCode === 8) {
+							newE.preventDefault();
+						}
+
+
 						dest.dispatchEvent(newE);
 					}
 				} catch (err) {
@@ -65,6 +71,8 @@
 		textarea.style.position = 'fixed';
 		textarea.style.top = '-100%';
 		textarea.style.left = '-100%';
+
+		textarea.focus();
 	}
 
 	const textareaTargets = [];

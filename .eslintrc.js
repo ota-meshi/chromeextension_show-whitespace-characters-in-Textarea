@@ -81,7 +81,7 @@
 		'no-warning-comments': 1, //[TODO]や[FIXME]を警告
 		'no-with': 2,
 		'radix': 2,
-		'vars-on-top': 2, // 変数宣言は必ず一番最初
+		// 'vars-on-top': 2, // 変数宣言は必ず一番最初
 		// 'wrap-iife': 2, // functionの即時実行禁止
 		// 'yoda': 2, // ヨーダ条件式の禁止
 		//Strict Mode
@@ -161,18 +161,18 @@
 		// 'spaced-comment': 2, // コメントの開始終了時の空白
 		// 'wrap-regex': 2, // 正規表現オブジェクト宣言時の括弧を強制
 		//ECMAScript 6
-		'arrow-parens': [2, 'as-needed'], // アローの引数に括弧が必要
-		'arrow-spacing': 2,
-		'constructor-super': 2,
-		'generator-star-spacing': 2,
-		'no-class-assign': 2,
-		'no-const-assign': 2,
-		'no-this-before-super': 2,
-		'no-var': 2,
-		'object-shorthand': 2,
-		'prefer-const': 2,
-		'prefer-spread': 2,
-		//'prefer-reflect': 2, // Refrectを使おう
+		// 'arrow-parens': [2, 'as-needed'], // アローの引数に括弧が必要
+		// 'arrow-spacing': 2,
+		// 'constructor-super': 2,
+		// 'generator-star-spacing': 2,
+		// 'no-class-assign': 2,
+		// 'no-const-assign': 2,
+		// 'no-this-before-super': 2,
+		// 'no-var': 2,
+		// 'object-shorthand': 2,
+		// 'prefer-const': 2,
+		// 'prefer-spread': 2,
+		// 'prefer-reflect': 2, // Refrectを使おう
 		'require-yield': 2,
 		//Legacy
 		'max-depth': 2,
@@ -183,7 +183,7 @@
 		// 'no-plusplus': 2, // インクリメント・デクリメント演算子の利用禁止
 	},
 	'env': {
-		'es6': true,
+		// 'es6': true,
 		'jquery': true,
 		'jasmine': true,
 		'browser': true,
