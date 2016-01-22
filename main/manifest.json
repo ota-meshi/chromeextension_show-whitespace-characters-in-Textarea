@@ -1,0 +1,31 @@
+﻿{
+	"name": "Show whitespace characters in Textarea",
+	"version": "0.0.1",
+	"manifest_version": 2,
+	"description": "Show whitespace characters in Textarea",
+	"icons": {
+		"16": "icons/icon16.png",
+		"48": "icons/icon48.png",
+		"128": "icons/icon128.png"
+	},
+	"content_scripts": [
+		{
+			"matches": [
+				"<all_urls>"
+			],
+			"css": [
+				"visible-spaces-editor.css"
+			],
+			"js": [
+				"show-whitespace-characters-in-textarea.js",
+				"visible-spaces-editor.js"
+			]
+		}
+	],
+	"web_accessible_resources": [
+		"icons/icon16.png"
+	],
+	"permissions": [
+		"<all_urls>"
+	]
+}

@@ -1,0 +1,35 @@
+span.vse-visible-space-box::after {
+	content: "";
+	position: absolute;
+	display: inline-block;
+	box-sizing: border-box;
+	pointer-events: none;
+}
+span.vse-visible-space-box.vse-visible-space-box-singlebyte::after {
+	border-radius: 100%;
+	background: #aaa;
+	left: 0.07em;
+	width: 0.15em;
+	bottom: 0.43em;
+	height: 0.15em;
+}
+span.vse-visible-space-box.vse-visible-space-box-multibyte::after {
+	border: 1px dotted #aaa;
+	border-radius: 0.2em;
+	top: 20%;
+	left: 0.1em;
+	width: 0.46em;
+	bottom: 20%;
+}
+span.vse-visible-space-box.vse-visible-space-box-tabchar::after {
+	border-top: 1px solid #aaa;
+	border-right: 1px solid #aaa;
+	top: 38%;
+	left: 0;
+	width: 0.3em;
+	height: 0.3em;
+	transform: rotate(45deg);
+}
+span.vse-visible-space-box {
+	position: relative;
+}
