@@ -1,9 +1,10 @@
-﻿(function() {
+﻿/*global VisibleSpacesEditor*/
+(function() {
 	'use strict';
 
 	function getAllEvents(element) {
-		const result = [];
-		for (const key in element) {
+		var result = [];
+		for (var key in element) {
 			if (key.indexOf('on') === 0) {
 				result.push(key.slice(2));
 			}
@@ -14,13 +15,14 @@
 		getAllEvents(dest).forEach(function(eventName) {
 			src.addEventListener(eventName, function(e) {
 				try {
+					var newE;
 					if (e instanceof ClipboardEvent) {
-						const newE = document.createEvent('Event');
+						newE = document.createEvent('Event');
 						newE.initEvent(e.type, true, true);
 						newE.clipboardData = e.clipboardData;
 						dest.dispatchEvent(newE);
 					} else {
-						const newE = new e.constructor(e.type, e);
+						newE = new e.constructor(e.type, e);
 
 						if (e.type === 'keydown' && e.keyCode === 8) {
 							newE.preventDefault();
@@ -36,10 +38,10 @@
 		});
 	}
 	function copyAllStyles(src, dest) {
-		const styles = getComputedStyle(src);
-		const destStyles = getComputedStyle(dest);
+		var styles = getComputedStyle(src);
+		var destStyles = getComputedStyle(dest);
 
-		for (const styleName in styles) {
+		for (var styleName in styles) {
 			if (destStyles[styleName] === styles[styleName]) {
 				continue;
 			}
@@ -48,7 +50,7 @@
 	}
 
 	function toVisibleSpacesEditor(textarea) {
-		const editBase = document.createElement('div');
+		var editBase = document.createElement('div');
 		textarea.parentElement.insertBefore(editBase, textarea);
 
 		copyAllStyles(textarea, editBase);
@@ -56,7 +58,7 @@
 		editBase.style['white-space'] = 'pre';
 		editBase.style['-webkit-user-modify'] = '';
 
-		const editor = window.visiblespaces.edit(editBase);
+		var editor = window.visiblespaces.edit(editBase);
 		editor.setValue(textarea.value);
 
 		editor.on(VisibleSpacesEditor.EVENT_TYPES.CHANGE_VALUE, function() {
@@ -75,7 +77,7 @@
 		textarea.focus();
 	}
 
-	const textareaTargets = [];
+	var textareaTargets = [];
 
 	document.addEventListener('click', function(e) {
 		if (e.ctrlKey && e.target.tagName.toLowerCase() === 'textarea') {

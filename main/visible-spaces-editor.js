@@ -112,7 +112,6 @@
 				};
 			}
 		} else if (isElementNode(node)) {
-			//remove space-class target
 			if (isVisibleSpaceSpan(node)) {
 				if (isSpaceChar(node.innerText)) {
 					return {
@@ -120,6 +119,7 @@
 						changeChild: false,
 					};
 				}
+				//remove space-class target
 				var textNode = removeHighlight(node);
 				if (textNode) {
 					highlight(textNode);
